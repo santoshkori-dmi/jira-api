@@ -1,0 +1,16 @@
+{
+  "name": "jiraapi",
+  "version": "1.0.0",
+  "description": "jira api",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "PragitiInc",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.19.0",
+    "ejs": "^3.0.1",
+    "express": "^4.17.1"
+  }
+}

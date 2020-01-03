@@ -1,0 +1,10 @@
+<p><%= response %></p>
+
+<% response.forEach((item) => { %>
+    <p>ID: <%= item.id %></p>
+    <p>name: <%= item.name %></p>
+    <p>scopes: <%= item.scopes %> | <%= JSON.stringify(item.scopes) %></p>
+    <p>avatarUrl: <%= item.avatarUrl %></p>
+<% }) %>
+
+<p><a href="/projects?id=<%= response[0].id %>&at=<%= accessToken %>">Get Projects</a></p>

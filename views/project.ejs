@@ -1,0 +1,7 @@
+<h1>Project</h1>
+<p>Project <%= response %></p>
+
+<% response.forEach((item) => { %>
+    <p>key: <%= item.key %></p>
+    <p>name: <%= item.name %></p>
+<% }) %>
