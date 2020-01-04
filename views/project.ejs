@@ -1,7 +1,48 @@
-<h1>Project</h1>
-<p>Project <%= response %></p>
+<!DOCTYPE html>
+<html lang="en">
 
-<% response.forEach((item) => { %>
-    <p>key: <%= item.key %></p>
-    <p>name: <%= item.name %></p>
-<% }) %>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title>Projects</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous" />
+    </head>
+
+    <body>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col">
+                    <div>
+                        <h1>Project</h1>
+                        <p>Project <%= response %></p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+
+                <% response.forEach((item) => { %>
+                <div class="col">
+                    <div class="card mb-4 mr-4">
+                        <img src="<%= item.avatarUrls["48x48"] %>" class="card-img-top img-fluid" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title"><%= item.key %></h5>
+                            <p class="card-text text-secondary"><%= item.name %></p>
+                            <div class="row">
+                                <div class="col">
+                                    <small style="line-height: 1em;">
+                                        <img src="<%= item.lead.avatarUrls["48x48"] %>" alt="<%= item.lead.displayName %>" class="rounded-circle img-fluid float-left mr-2" width="32">
+                                        <div><%= item.lead.displayName %></div>
+                                        <a href="mailto:<%= item.lead.key %>"><%= item.lead.key %></a>
+                                    </small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <% }) %>
+            </div>
+        </div>
+    </body>
+
+</html>

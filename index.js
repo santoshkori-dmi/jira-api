@@ -19,7 +19,7 @@ app.get("/", (req, res) => {
 app.get("/projects", (req, res) => {
 	var jiraId = req.query.id;
 	var accessToken = req.query.at;
-	var appUrl = "https://api.atlassian.com/ex/jira/" + jiraId + "/rest/api/3/project";
+	var appUrl = "https://api.atlassian.com/ex/jira/" + jiraId + "/rest/api/3/project?expand=lead,description";
 	var config = {
 		headers: {
 			Authorization: "Bearer " + accessToken
